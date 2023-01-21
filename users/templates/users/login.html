@@ -1,0 +1,82 @@
+{% extends "Publications/base.html" %}
+{% block content %}
+
+<body class="header">
+    
+    <div class="container text2">
+<div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header"><FONT COLOR="#ffffff"><h2><b>LOG IN</b></h2></FONT></div>
+                            <div class="card-body">
+
+                                <form action="{% url 'users:login' %}" method="post" class="form-horizontal"  >
+                                    {% csrf_token %}
+
+                                    <!--<div class="form-group">
+                                        <label for="name" class="cols-sm-2 control-label">Your Name</label>
+                                        <div class="cols-sm-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                                <input type="text" class="form-control" name="name" id="name" placeholder="Enter your Name">
+                                            </div>
+                                        </div>
+                                    </div>-->
+                                    
+                                    <div class="form-group">
+                                        <label for="username" class="cols-sm-2 control-label"><FONT COLOR="#ffffff"><b>Email</b></FONT></label>
+                                        <div class="cols-sm-10">
+                                            <div class="input-group">
+                                               <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                                
+                                                <input type="text"  class="form-control" name="username" id="username" placeholder="Enter your Username">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password" class="cols-sm-2 control-label"><FONT COLOR="#ffffff"><b>Password</b></FONT></label>
+                                        <div class="cols-sm-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                                
+                                                <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group ">
+                                       
+                                        <button name="submit"  class="btn btn-primary btn-lg btn-block login-button">Log In</button>
+                
+                                    </div>
+                                    <div class="login-register">
+                                        <a href="{% url 'users:register' %}">REGISTER</a>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+</div>	<script type="text/javascript">
+		</script>
+
+
+</body>
+ <style>
+    .text2{
+            width: 70%;
+            color: black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            
+        }
+</style>   
+
+
+
+
+{% endblock content %}

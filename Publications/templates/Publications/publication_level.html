@@ -1,0 +1,49 @@
+{% extends "Publications/base.html" %}
+{% block content %}
+<body>
+    <section class="header">
+          <form method="get" class="navbar-form navbar-left" action="{%  url 'publications:search' %}">
+            <div class="form-group">
+                <input type="search" class="form-control" aria-label="Search" placeholder="Author" name="author" id="author">
+                <input type="search" class="form-control" aria-label="Search" placeholder="Title" name="title" id="title">
+            </div>
+        <button type="submit" class="btn btn-default"><b>SEARCH</b></button>
+    </form>
+    <div class="text-box">
+        <h1>Publications :</h1>
+        <ul style="list-style: none">
+            {% for l in level %}
+            <li><a href="{% url 'publications:publication_article' l.id %}" ><h3 class="btn">{{l}}</h3></a></li>
+            {% endfor %}
+        </ul>    
+    </div>
+           
+        
+    </section>
+
+
+
+</body>
+<style>
+    .text-colour{            
+    color: red;
+    }
+    .btn{
+        display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 2px;
+    padding: 12px 34px;
+    font-size: 15px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+     border-radius: 30px;
+    }
+    .btn:hover{
+    border: 1px solid #f44336;
+    background: linear-gradient(to right, #ff105f,#ffab06);
+    transition: 1s; 
+    }
+</style>
+{% endblock content %}

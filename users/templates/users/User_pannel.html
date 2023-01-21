@@ -1,0 +1,64 @@
+{% extends "Publications/base.html" %}
+{% block content %}
+<body class="header">
+<form class="form-horizontal" method="post" action="{% url 'users:createpannel' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container text3">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text2" >
+            <div class="card">
+    <br>
+                
+    <div><label class="text2"><h5>NAME</h5></label>
+    {{form.name}}</div>
+    
+    <div><label class="text2"><h5>Gender</h5></label>
+    {{form.gender}}</div>
+    
+    <div><label class="text2"><h5>Phone Number</h5></label>
+    {{form.phone}}</div>
+    
+    <div><label class="text2"><h5>Group</h5></label>
+    {{form.group}}</div>
+    
+    <div><label class="text2"><h5>Institution</h5></label>
+    {{form.college}}</div>
+    
+    <div><label class="text2"><h5>BS PROGRAMME</h5></label>
+    {{form.programe}}</div>
+    <div><label class="text2"><h5>Year</h5></label>
+    {{form.level}}</div>
+    
+    <div><label class="text2"><h5>Research Topic</h5></label>
+    {{form.topic}}</div>
+    <div><label class="text2"><h5>Image</h5></label>
+    {{form.profile_pic}}</div>    
+    <div><label class="text2"><h5>Description</h5></label>
+    {{form.description}}</div>
+    <br>
+    <br>
+    <div class="form-group ">
+                                       
+        <button name="submit"  class="btn btn-primary btn-lg btn-block login-button">Register</button>
+                
+       
+            </div>
+            </div>
+        </div>        
+    </div>
+    </div>    
+    </form> 
+</body>    
+
+
+<style>
+    .text2{
+            width: 40;
+            color: white;
+            text-align: center;
+    }
+    .text3{
+        align-items: center;
+    }
+    </style>
+{% endblock content %}

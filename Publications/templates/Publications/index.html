@@ -1,0 +1,96 @@
+{% extends "Publications/base.html" %}
+<!DOCTYPE html>
+{% block content %}
+<html>
+    <!--<head>
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <title>SEHAT FALAH</title>
+        <link rel="stylesheet" href="static/css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;600;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/f8313cd07e.js" crossorigin="anonymous"></script>
+    </head>-->
+<body class="header">
+    <section >
+    <!--<nav>
+       <!-- <a href="index.html"><img src="static/images/logo.png" width="150" height="100"></a>
+           <div class="nav-links" id="navLinks">
+               <i class="fa fa-times" onclick="hideMenu()"></i>
+               <ul>
+        <li><a href="">HOME</a></li>
+        <li><a href="">ABOUT</a></li>
+        <!--<li><a href="">SERVICES</a></li>
+        <li><a href="">CONTACTS</a></li>
+               </ul>
+        </div>
+          <i class="fa fa-bars" onclick="showMenu()"></i> 
+        </nav>-->
+        <div class="text-box">
+<h1>RESEARCHERS HUT</h1>
+            <h2>VISION</h2>
+            <p>Platforms for collaborative multidisciplinary research are effective tools.
+Our vision is to offer a platform for bringing together scholars with different specialties.
+          <br>      
+<br>1)	They can easily discuss their research topics and work together on this site.
+                
+<br>2)	By offering this forum, we hope to develop Pakistan's research society. 
+            </p>           
+            {% if user.is_authenticated %}
+            
+            
+            <a href="{% url 'publications:publication_level' %}"class="hero-btn">PUBLICATIONS</a>
+            <br>
+            <br>
+            <a href="{% url 'users:reserchers' %}"class="hero-btn">RESEARCHERS </a>
+            <br>
+            <br>
+            <a href="{% url 'users:createpannel' %}"class="hero-btn">Create Your Profile </a>
+            {% else %}
+            <a href="{% url 'publications:publication_level' %}"class="hero-btn">PUBLICATIONS</a>
+            <br>
+            <br>
+            <a href="{% url 'users:login' %}"class="hero-btn">LOG IN</a>
+            
+            <ul>
+                <br>
+                <a href="{% url 'users:register' %}"class="hero-btn">JOIN US AS A RESEARCHER</a>
+            </ul>
+            {% endif %}
+        </div>
+    
+    
+  <!-- <script>
+    var navLinks = document.getElementById("navLinks")
+    function showMenu(){
+        navLinks.style.right = "0";    
+    }
+        function hideMenu(){
+        navLinks.style.right = "-200px";    
+    }
+       
+    </script>
+<!--<style>
+    .backgroung_image{
+        background-image: url('static/images/banner.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: auto;
+        
+    }
+    
+
+    
+</style>-->
+
+    
+    
+    
+    </section>
+    </body>
+    
+    
+
+{% endblock content %}
